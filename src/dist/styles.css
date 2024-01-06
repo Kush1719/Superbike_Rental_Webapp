@@ -1248,6 +1248,7 @@ body {
 @media (max-width: 550px) {
   .choose-container__img {
     width: 100%;
+    margin-left: 2rem;
   }
 }
 
