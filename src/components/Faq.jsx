@@ -39,7 +39,7 @@ function Faq() {
                   onClick={() => openQ("q1")}
                   className={`faq-box__question  ${getClassQuestion("q1")}`}
                 >
-                  <p>1. What is special about comparing rental car deals?</p>
+                  <p>1. What is special about comparing rental Superbike deals?</p>
                   <IconChevronDown />
                 </div>
                 <div

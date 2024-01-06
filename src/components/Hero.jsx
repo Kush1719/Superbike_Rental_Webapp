@@ -61,7 +61,6 @@ function Hero() {
               </div>
             </div>
 
-            {/* image */}
             <img
               src={HeroCar}
               alt="car-img"
@@ -70,7 +69,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* page up */}
         <div
           onClick={scrollToTop}
           className={`scroll-up ${goUp ? "show-scroll" : ""}`}

@@ -16,7 +16,7 @@ function Footer() {
               </li>
               <li>
                 <a href="tel:9375373844">
-                  <IconPhoneCall /> &nbsp; (9578) -XXX-XXX
+                  <IconPhoneCall /> &nbsp; (957) -XXX-XXXX
                 </a>
               </li>
               <li>
@@ -24,7 +24,7 @@ function Footer() {
                   <IconMail />
                   &nbsp; superbikerental@gmail.com
                 </a>
-              </li> 
+              </li>
             </ul>
 
             <ul className="footer-content__2">

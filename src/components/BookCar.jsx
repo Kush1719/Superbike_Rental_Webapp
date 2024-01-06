@@ -180,11 +180,11 @@ function BookCar() {
               <form className="box-form">
                 <div className="box-form__car-type">
                   <label>
-                    <IconCar className="input-icon" /> &nbsp; Select Your Car
+                    <IconCar className="input-icon" /> &nbsp; Select Your Superbike
                     Type <b>*</b>
                   </label>
                   <select value={carType} onChange={handleCar}>
-                    <option>Select your bike type</option>
+                    <option>Select your Superbike type</option>
                     <option value="Suzuki Hayabusa">Suzuki Hayabusa</option>
                     <option value="Ducati Panigale V4">Ducati Panigale V4</option>
                     <option value="MV Agusta F3 800">MV Agusta F3 800</option>
