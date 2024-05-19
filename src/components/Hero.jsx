@@ -20,16 +20,15 @@ function Hero() {
 
   useEffect(() => {
     const onPageScroll = () => {
-      if(window.pageYOffset > 600) {
+      if (window.pageYOffset > 600) {
         setGoUp(true);
-      }
-      else {
+      } else {
         setGoUp(false);
       }
     };
     window.addEventListener("scroll", onPageScroll);
 
-    return() => {
+    return () => {
       window.removeEventListener("scroll", onPageScroll);
     };
   }, []);
@@ -68,7 +67,6 @@ function Hero() {
             />
           </div>
         </div>
-
         <div
           onClick={scrollToTop}
           className={`scroll-up ${goUp ? "show-scroll" : ""}`}

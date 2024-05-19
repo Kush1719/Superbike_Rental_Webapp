@@ -381,7 +381,7 @@ body {
   width: 2rem;
   height: 2rem;
   bottom: 5rem;
-  right: 5rem;
+  right: 1rem;
   z-index: 20;
   display: flex;
   align-items: center;
@@ -2379,4 +2379,11 @@ footer {
   text-decoration: none;
   color: white;
   font-weight: 700;
+}
+
+.date-error-message {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }

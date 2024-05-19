@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { IconCar, IconInfoCircleFilled, IconX } from "@tabler/icons-react";
 import { IconMapPinFilled } from '@tabler/icons-react';
 import { IconCalendarEvent } from '@tabler/icons-react';
@@ -9,11 +9,11 @@ import Duke_200 from "../images/cars-big/duke200.png";
 import Daytona_675R from "../images/cars-big/daytona-675-r.png";
 import MV_Agusta_F3 from "../images/cars-big/mv-agusta-f3.png";
 import Yamaha_MT_125 from "../images/cars-big/mt-125.png";
- 
+
 function BookCar() {
   const [modal, setModal] = useState(false);
 
-  //car boooking
+  // car booking
   const [carType, setCarType] = useState("");
   const [pickUp, setPickUp] = useState("");
   const [dropOff, setDropOff] = useState("");
@@ -39,7 +39,7 @@ function BookCar() {
   const handleLastName = (e) => {
     setLastName(e.target.value);
   }
-  
+
   const handlePhone = (e) => {
     setPhone(e.target.value);
   }
@@ -68,6 +68,11 @@ function BookCar() {
   const openModal = (e) => {
     e.preventDefault();
     const errorMsg = document.querySelector(".error-message");
+    const dateErrorMsg = document.querySelector(".date-error-message");
+    
+    const pickDate = new Date(pickTime);
+    const dropDate = new Date(dropTime);
+  
     if (
       pickUp === "" ||
       dropOff === "" ||
@@ -76,15 +81,19 @@ function BookCar() {
       carType === ""
     ) {
       errorMsg.style.display = "flex";
+      dateErrorMsg.style.display = "none";
+    } else if (dropDate <= pickDate) {
+      dateErrorMsg.style.display = "flex";
+      errorMsg.style.display = "none";
     } else {
       setModal(!modal);
       const modalDiv = document.querySelector(".booking-modal");
       modalDiv.scroll(0, 0);
       errorMsg.style.display = "none";
+      dateErrorMsg.style.display = "none";
     }
-  };
+  };  
 
-  // disable page scroll when modal is displayed
   useEffect(() => {
     if (modal === true) {
       document.body.style.overflow = "hidden";
@@ -171,6 +180,11 @@ function BookCar() {
               <p className="error-message">
                 All fields required! <IconX width={20} height={20} />
               </p>
+
+              <p className="date-error-message">
+                Drop-off date must be after the pick-up date! <IconX width={20} height={20} />
+              </p>
+
 
               <p className="booking-done">
                 Check your email to confirm an order.{" "}
@@ -259,8 +273,6 @@ function BookCar() {
         </div>
       </section>
 
-      {/* modal ------------------------------------ */}
-
       <div className={`booking-modal ${modal ? "active-modal" : ""}`}>
         {/* title */}
         <div className="booking-modal__title">
@@ -330,12 +342,12 @@ function BookCar() {
           </div>
           <div className="booking-modal__car-info__model">
             <h5>
-              <span>Car -</span> {carType}
+              <span>Superbike -</span> {carType}
             </h5>
             {imgUrl && <img src={imgUrl} alt="car_img" />}
           </div>
         </div>
-        {/* personal info */}
+        
         <div className="booking-modal__person-info">
           <h4>Personal Information</h4>
           <form className="info-form">
